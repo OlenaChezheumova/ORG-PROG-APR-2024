@@ -4,6 +4,8 @@ public class Car implements IMovable {
 
     public String color;
 
+    public String plateNumber;
+
     public void goTo() {
         System.out.println(color + " car goes somewhere");
     }
@@ -11,7 +13,8 @@ public class Car implements IMovable {
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Car){
-            boolean match = this.color.equals(((Car) obj).color);
+            boolean match = this.color.equals(((Car) obj).color)
+                    && this.plateNumber.equals(((Car) obj).plateNumber);
             return match;
         }
         return false;
@@ -19,7 +22,7 @@ public class Car implements IMovable {
 
     @Override
     public int hashCode(){
-        return this.color.hashCode();
+        return (this.color + this.plateNumber).hashCode();
     }
 
     @Override

@@ -101,3 +101,4 @@ public class Main {
         carToPaint.color = carNewColor;
     }
 }
+
